@@ -1,0 +1,20 @@
+{
+  "source": "code-archive",
+  "artifact": "nasa_astronaut_health_telemetry_monitor.zip",
+  "capabilities": [
+    { "capability": "application code", "source": "single React TSX dashboard", "outcome": "migrated interactive telemetry training dashboard with 3D twin, charts, crew roster, scenarios, protocol checklist, uplink queue, reflex test, and GLB upload", "status": "verified", "next_action": null },
+    { "capability": "schema", "source": "none detected", "outcome": "no application database schema to migrate", "status": "not_applicable", "next_action": null },
+    { "capability": "records", "source": "none detected; telemetry is generated in memory", "outcome": "no stored application records to migrate", "status": "not_applicable", "next_action": null },
+    { "capability": "authentication and user identities", "source": "none detected", "outcome": "no accounts or user identity service to migrate", "status": "not_applicable", "next_action": null },
+    { "capability": "authorization", "source": "none detected", "outcome": "no roles, memberships, or access rules to migrate", "status": "not_applicable", "next_action": null },
+    { "capability": "uploaded file bytes", "source": "no bundled astronaut model; source offered a local model picker", "outcome": "no existing uploaded files to migrate", "status": "not_applicable", "next_action": null },
+    { "capability": "external providers", "source": "none detected", "outcome": "no external provider integration to preserve", "status": "not_applicable", "next_action": null },
+    { "capability": "public endpoints and API routes", "source": "none detected", "outcome": "no external HTTP entry points to migrate", "status": "not_applicable", "next_action": null },
+    { "capability": "OAuth callbacks", "source": "none detected", "outcome": "no OAuth callbacks to migrate", "status": "not_applicable", "next_action": null },
+    { "capability": "webhooks", "source": "none detected", "outcome": "no webhook handlers to migrate", "status": "not_applicable", "next_action": null },
+    { "capability": "schedules and background triggers", "source": "none detected", "outcome": "no scheduled or background jobs to migrate", "status": "not_applicable", "next_action": null },
+    { "capability": "secrets", "source": "none detected", "outcome": "no environment variables or secret names required", "status": "not_applicable", "next_action": null },
+    { "capability": "cutover", "source": "standalone in-memory simulation", "outcome": "no production backend or provider cutover detected", "status": "not_applicable", "next_action": null },
+    { "capability": "verification", "source": "preview dashboard and interactive flows", "outcome": "five saved tests passed; desktop and mobile preview verified; exercised alert, checklist, crew select, uplink, reaction test, subsystem focus, and uploaded a test GLB; no browser exceptions", "status": "verified", "next_action": null }
+  ]
+}
