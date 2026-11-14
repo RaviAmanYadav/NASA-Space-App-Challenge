@@ -1,6 +1,13 @@
 import { describe, expect, it } from "vitest";
 
-import { crewRoster, formatMissionTime, getProtocolKey, initialVitals, nextSimulatedVitals, protocols } from "@/lib/mission-data";
+import {
+  crewRoster,
+  formatMissionTime,
+  getProtocolKey,
+  initialVitals,
+  nextSimulatedVitals,
+  protocols,
+} from "@/lib/mission-data";
 
 describe("mission simulation data", () => {
   it("formats elapsed mission time as days and a clock", () => {
@@ -24,7 +31,8 @@ describe("mission simulation data", () => {
 
   it("keeps simulated nominal and anomaly readings on their scenario ranges", () => {
     const crew = crewRoster.find((member) => member.id === "AST-04-VANCE");
-    if (!crew) throw new Error("The demonstration roster must include its commander.");
+    if (!crew)
+      throw new Error("The demonstration roster must include its commander.");
     for (let sample = 0; sample < 40; sample += 1) {
       const nominal = nextSimulatedVitals(crew, false);
       expect(nominal.hr).toBeGreaterThanOrEqual(crew.baseHr - 2);

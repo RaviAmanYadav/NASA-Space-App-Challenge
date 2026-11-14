@@ -16,7 +16,21 @@ describe("astronaut profile entry validation", () => {
   });
 
   it("rejects missing details and non-whole-number ages", () => {
-    expect(astronautProfileSchema.safeParse({ astronautId: "", name: "", age: "", mission: "" }).success).toBe(false);
-    expect(astronautProfileSchema.safeParse({ astronautId: "AST-05-LEE", name: "Jordan Lee", age: "38.5", mission: "Artemis IV" }).success).toBe(false);
+    expect(
+      astronautProfileSchema.safeParse({
+        astronautId: "",
+        name: "",
+        age: "",
+        mission: "",
+      }).success,
+    ).toBe(false);
+    expect(
+      astronautProfileSchema.safeParse({
+        astronautId: "AST-05-LEE",
+        name: "Jordan Lee",
+        age: "38.5",
+        mission: "Artemis IV",
+      }).success,
+    ).toBe(false);
   });
 });
