@@ -8,80 +8,80 @@
 // You should NOT make any changes in this file as it will be overwritten.
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
-import { Route as rootRouteImport } from './routes/__root'
-import { Route as IndexRouteImport } from './routes/index'
-import { Route as AstronautsNewRouteImport } from './routes/astronauts.new'
+import { Route as rootRouteImport } from "./routes/__root";
+import { Route as IndexRouteImport } from "./routes/index";
+import { Route as AstronautsNewRouteImport } from "./routes/astronauts.new";
 
 const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
+  id: "/",
+  path: "/",
   getParentRoute: () => rootRouteImport,
-} as any)
+} as any);
 const AstronautsNewRoute = AstronautsNewRouteImport.update({
-  id: '/astronauts/new',
-  path: '/astronauts/new',
+  id: "/astronauts/new",
+  path: "/astronauts/new",
   getParentRoute: () => rootRouteImport,
-} as any)
+} as any);
 
 export interface FileRoutesByFullPath {
-  '/': typeof IndexRoute
-  '/astronauts/new': typeof AstronautsNewRoute
+  "/": typeof IndexRoute;
+  "/astronauts/new": typeof AstronautsNewRoute;
 }
 export interface FileRoutesByTo {
-  '/': typeof IndexRoute
-  '/astronauts/new': typeof AstronautsNewRoute
+  "/": typeof IndexRoute;
+  "/astronauts/new": typeof AstronautsNewRoute;
 }
 export interface FileRoutesById {
-  __root__: typeof rootRouteImport
-  '/': typeof IndexRoute
-  '/astronauts/new': typeof AstronautsNewRoute
+  __root__: typeof rootRouteImport;
+  "/": typeof IndexRoute;
+  "/astronauts/new": typeof AstronautsNewRoute;
 }
 export interface FileRouteTypes {
-  fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/astronauts/new'
-  fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/astronauts/new'
-  id: '__root__' | '/' | '/astronauts/new'
-  fileRoutesById: FileRoutesById
+  fileRoutesByFullPath: FileRoutesByFullPath;
+  fullPaths: "/" | "/astronauts/new";
+  fileRoutesByTo: FileRoutesByTo;
+  to: "/" | "/astronauts/new";
+  id: "__root__" | "/" | "/astronauts/new";
+  fileRoutesById: FileRoutesById;
 }
 export interface RootRouteChildren {
-  IndexRoute: typeof IndexRoute
-  AstronautsNewRoute: typeof AstronautsNewRoute
+  IndexRoute: typeof IndexRoute;
+  AstronautsNewRoute: typeof AstronautsNewRoute;
 }
 
-declare module '@tanstack/react-router' {
+declare module "@tanstack/react-router" {
   interface FileRoutesByPath {
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/astronauts/new': {
-      id: '/astronauts/new'
-      path: '/astronauts/new'
-      fullPath: '/astronauts/new'
-      preLoaderRoute: typeof AstronautsNewRouteImport
-      parentRoute: typeof rootRouteImport
-    }
+    "/": {
+      id: "/";
+      path: "/";
+      fullPath: "/";
+      preLoaderRoute: typeof IndexRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
+    "/astronauts/new": {
+      id: "/astronauts/new";
+      path: "/astronauts/new";
+      fullPath: "/astronauts/new";
+      preLoaderRoute: typeof AstronautsNewRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AstronautsNewRoute: AstronautsNewRoute,
-}
+};
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
-  ._addFileTypes<FileRouteTypes>()
+  ._addFileTypes<FileRouteTypes>();
 
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
+import type { getRouter } from "./router.tsx";
+import type { startInstance } from "./start.ts";
+declare module "@tanstack/react-start" {
   interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+    ssr: true;
+    router: Awaited<ReturnType<typeof getRouter>>;
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>;
   }
 }
